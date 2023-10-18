@@ -9,7 +9,6 @@ public class Fraction{
 		denominator = d;
 	}
 	
-	//TODO default constructor (no arguments)
     public Fraction(){
         numerator=1;
         denominator=2;
@@ -32,7 +31,6 @@ public class Fraction{
 		return result;
 	}
 	
-	// TODO  subtract()
 	public Fraction subtract(Fraction other){
         int n = this.numerator*other.denominator - this.denominator*other.numerator;
         int d = this.denominator *other.getDenom();
@@ -41,7 +39,6 @@ public class Fraction{
         return result;
     }
         
-	// TODO multiply()
     public Fraction multiply(Fraction other){
         int n = this.numerator*other.numerator;
         int d = this.denominator*other.denominator;
@@ -49,14 +46,12 @@ public class Fraction{
         return result;
     }
 	
-	// TODO toString()
 	
     public String toString(){
         String s = numerator + "/" + denominator;
 		return s;
     }
 
-	// TODO reciprocal()
 	
     public Fraction reciprocal(){
         int newD = this.numerator;

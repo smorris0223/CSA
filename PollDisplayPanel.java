@@ -18,7 +18,7 @@ private int count1, count2, count3;
   // Constructor
   public PollDisplayPanel(String nm1, String nm2, String nm3)
   {
-    setBackground(Color.WHITE);
+    setBackground(Color.pink);
     name1 = nm1;
     name2 = nm2;
     name3 = nm3;
@@ -99,15 +99,12 @@ private int count1, count2, count3;
       drawSector(g, x, y, r, fromDegree, degrees);
       fromDegree+= degrees;
     System.out.println(degrees);
-
-
       g.setColor(Color.BLUE);
       degrees = Math.max(360 - fromDegree, 0);
       drawSector(g, x, y, r, fromDegree, degrees);
           System.out.println(degrees);
 
-    degrees = 0;
-    fromDegree = 0;
+  
     }
     else
     {
@@ -146,9 +143,10 @@ private int count1, count2, count3;
   // corresponds to count / total, rounded to the nearest integer.
   private int countToDegrees(int count, int total)
   {
-    double c = (count/total)*360;
+    count = count*100;
+    double c = count/total*360;
 
-    return (c);
+    return ((int)c/100);
   }
 
 
@@ -171,4 +169,5 @@ private int count1, count2, count3;
 	votingMachine.vote2();
 	System.out.println(votingMachine);
   }
+
 }
