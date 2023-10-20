@@ -10,14 +10,14 @@ public class Cylinder {
 
    public double vol(){
     double b = base.area();
-    return 2*b*height;
+    return b*height;
     
    }
    public double sa(){
     //surface area = 2piRh+2piR^2
     double c = base.circumference();
     double a = base.area();
-    return 2*c*height+2*a;
+    return c*height+2*a;
    }
 }   
 
