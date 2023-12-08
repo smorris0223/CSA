@@ -1,5 +1,6 @@
 public class WhileLoops{
 
+    public static void main(string[] args){
 public static int addOdds(int n){
     int sum = 0;
     while(n>=1){
@@ -38,5 +39,6 @@ public boolean isPerfectSquare(int n){
      x+=2;   
     }
     return x==n;
+}
 }
 }
