@@ -1,12 +1,13 @@
 public class AdvancedForLoops {
 public static void main(String[] args) {
     eights();
+    alternate(5);
+    alternate(8);
     isosceles(5);
     isosceles(9);
     upSideDown(9, 5);
     upSideDown(8,6);
-    alternate(5);
-    alternate(8);
+    
 }
     
 public static void eights(){
