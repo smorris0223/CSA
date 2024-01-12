@@ -61,6 +61,19 @@ public static boolean endsWith(String s, String suffix){
     else{return false;}
 }
 
+public static String removeTag(String text, String tag){
+    String startTag = "<"+tag+">";
+    String endTag = "</"+tag+">";
+    int x = text.indexOf("<");
+    int y = text.lastIndexOf(">");
+    String Word = text.substring(x, y+1);
+    int z = tag.length();
+    if(startsWith(Word, startTag)&& endsWith(Word,endTag)){
+        return text.substring(x+(z+2),y-(z+2));
+    }
+    else{return text;}
+}
+
 public static void main(String[] args){
     System.out.println(scroll("Hello World"));
     System.out.println(scroll("happy"));
@@ -87,6 +100,16 @@ public static void main(String[] args){
     System.out.println(endsWith("astronomy", "nom"));
     System.out.println(endsWith("nomy", "astronomy"));
     System.out.println(endsWith("astronomy", "astronomy"));
+    System.out.println("\nremoveTag");
+    System.out.println(removeTag("<b>Hello World</b>", "b"));
+    System.out.println(removeTag("<b>Hello World</b>", "head"));
+    System.out.println(removeTag("Hello World</b>", "b"));
+    System.out.println(removeTag("<b>Hello World", "b"));
+    System.out.println(removeTag("</img>Hello World<img>", "img"));
+    System.out.println(removeTag("Happy Birthday <b>Hello World</b>", "b"));
+    System.out.println(removeTag("<title>Hello World</title> Happy Birthday", "title"));
+    System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
+
 }
 
 
