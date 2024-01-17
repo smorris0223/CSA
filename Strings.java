@@ -66,7 +66,7 @@ public static String removeTag(String text, String tag){
     String endTag = "</"+tag+">";
     int x = text.indexOf("<");
     int y = text.lastIndexOf(">");
-    String Word = text.substring(x, y+1);
+    String Word = text.substring(x, y+1);//isolates tags & word within them
     int z = tag.length();
     if(startsWith(Word, startTag)&& endsWith(Word,endTag)){
         return text.substring(x+(z+2),y-(z+2));
