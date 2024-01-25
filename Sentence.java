@@ -23,11 +23,12 @@ public class Sentence {
         int a = 0;
 		for(int x = 0; x<n; x++){
 		int b = currSent.indexOf(str,a);
+		System.out.println("Test " + (x+1)+": "+b);//remove eventually
 		if(b==-1){return -1;}
 		a+=b;
 		}
-        
-		return a;  //replace this
+       
+		return a; 
 	}
 
 	/** Modifies the current sentence by replacing the nth occurrence of str with repl
@@ -37,6 +38,14 @@ public class Sentence {
 	 */
 	public void replaceNthTime(String str, int n, String repl) {
 		/*  part b - you must call findNthTime here */
+		int a = findNthTime(str, n);
+		int b = str.length();
+		if(a!=-1){
+			String start= str.substring(0,a);
+			String end = str.substring(a+b);
+			str = start+repl+end;
+
+		}
 	}
 
 	/** Returns the index of the last occurrence of str in the current sentence:
@@ -45,8 +54,14 @@ public class Sentence {
 	 * Postcondition: the current sentence is not modified.
 	 */
 	public int findLastTime(String str) {
-		/* part c - you must call findNthTime here */
-		return -1;  // replace this
+		int b = 0;
+		int a = 0;
+		while(a!=-1){
+			a = findNthTime(str,a);
+			b++;
+			a++;
+		}
+		return findNthTime(str, b);
 	}
 
 	public static void main(String[] args) {
