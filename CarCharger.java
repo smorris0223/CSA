@@ -26,27 +26,23 @@ public class CarCharger {
         rateTable = table;
     }
 
-    /** Determines the total cost to charge the car starting at
-     * the beginning of startHour.
-     * @param startHour  the hour when charging begining
-     *                   Precondition: 0 <= startHour <= 23
-     * @param numHours  the number of hours of needed charge.
-     *                  Precondition: chargeTime > 0
-     * @return      the total cost to charge the car.
-     */
+    
     public int getChargingCost(int startHour, int numHours){
-        return 0;		// replace this
+        int sum = 0;
+        for (int x =0; x<numHours;x++){
+            sum+=rateTable[(startHour+x)%24];
+        }
+        return sum;
     }
 
-    /** Determines the start time to charge the car at the
-     * lowest cost for the given charge time.
-     * @param hours  the number of hours needed to charge the car.
-     *               Precondition:  hours > 0
-     * @return an optimal start time with 0 <= returned value <= 23
-     */
+    
     public int getChargeStartTime(int hours){
-        
-        return -1;   //replace this
+        int min = getChargingCost(0, hours);
+        int time = 0;
+        for(int i = 1; i<23;i++){
+           int x = getChargingCost(i, hours);
+           if(x<min){min=x; time = i;}}
+        return time;   //replace this
     }
 
 }
