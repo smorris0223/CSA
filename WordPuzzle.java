@@ -2,7 +2,7 @@
 and a WordPuzzle class that represents a word puzzle grid.
  */
 
-import javax.swing.Box;
+// import javax.swing.Box;
 
 public class WordPuzzle {
    
@@ -56,8 +56,8 @@ public class WordPuzzle {
         int r = blackBoxes.length;
         int c = blackBoxes[0].length;
         int count = 0;
+        puzzle = new Box[r][c];
 
-       Box[][]Puzzle=new Box[r][c];
 		for(int x =0;x<r;x++){
             for(int y = 0;y<c;y++){
                 if(toBeLabeled(x, y, blackBoxes)==true){
