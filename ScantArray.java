@@ -64,20 +64,22 @@ public class ScantArray {
      */
     public void removeColumn(int col){
         /* part b */
-        for(ScantArrayEntry s:entries){
-            if(s.getColumn()==col){
-                entries.remove(s);
-            }
-            else if(s.getColumn()>col){
-                addEntry(s.getRow(), s.getColumn()-1, s.getValue());
-                entries.remove(s);
-            }
+      for(int i=entries.size()-1;i>0;i--)
+          if(entries.get(i).getColumn()==col){
+            entries.remove(i);} 
 
+        else if(entries.get(i).getColumn()>col){
+            addEntry(entries.get(i).getRow(), (entries.get(i).getColumn()-1), entries.get(i).getValue());
+            entries.remove(i);
         }
-		
-		
-		
-    }
+        numColumns--;
+        }
+          
+
+      
+      
+			
+    
 
     /** Allows the ScantArray to be printed.  The
      * result should look like a 2D array.  Entries
@@ -90,12 +92,19 @@ public class ScantArray {
      */
     public String toString(){
         /* part c */
-        String s = "";
-
+        String str = "";
+        for(int x = 0; x<numRows;x++){
+            for(int y = 0; y<numColumns;y++){
+                str+=(getValueAt(x,y));
+                str+=" ";
+                }
+                str+="\n";
+            }
+        
         
 		
 		
-        return s;
+        return str;
     }
 
     public static void main(String[] args){
